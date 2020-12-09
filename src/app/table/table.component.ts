@@ -8,6 +8,7 @@ import { PaymentService } from '../services/payment.service';
   styleUrls: ['./table.component.less']
 })
 export class TableComponent implements OnInit {
+
   @Input() get selectedColumns(): any[] {
     return this._selectedColumns;
   }
@@ -17,14 +18,15 @@ export class TableComponent implements OnInit {
   }
 
   public payments: Payment[] = [];
-  public cols: any[];
 
+  public cols: any[];
   public _selectedColumns: any[];
+  
   constructor(private paymentService: PaymentService) {
     this.cols = [
       { field: 'id', header: 'Номер' },
       { field: 'name', header: 'Название' },
-      { field: 'amount', header: 'Сумма' },
+      { field: 'total', header: 'Сумма' },
       { field: 'discount', header: 'Скидка' }
     ];
     this._selectedColumns = this.cols;

@@ -1,6 +1,14 @@
 export interface Payment {
-    id: number;
+    id: string;
     name: string;
-    amount: number;
+    total: number;
     discount: number;
 }
+
+export const PaymentsNames = [
+    'Оплата по договору',
+    'Перевод физ. лицу',
+    'Перевод юр. лицу',
+    'Оплата услуг',
+    'Покупка товара'
+]

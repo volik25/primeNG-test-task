@@ -1,18 +1,41 @@
 import { Observable, of } from 'rxjs';
-import { Payment } from '../models/payment.model';
+import { Payment, PaymentsNames } from '../models/payment.model';
 
 export class PaymentService {
     
-    private payments: Payment[] = [
-        {
-            id: 12345678,
-            name: 'Талон №1',
-            amount: 5000,
-            discount: 1000
-        }
-    ]
+    private names: string[] = PaymentsNames;
+    private payments: Payment[] = [];
 
     public getPayments(): Observable<Payment[]> {
-        return of(this.payments);
+        return of(this.generatePayments());
+    }
+
+    private generatePayments() {
+        for (let i = 1; i < 21; i++) {
+            this.payments.push({
+                id: this.generateId(),
+                name: this.generateNames(),
+                total: this.generateTotalDiscount(),
+                discount: this.generateTotalDiscount()
+            })
+        }
+        return this.payments;
+    }
+
+    private generateTotalDiscount() {
+        return Math.floor(Math.random()*10000);
+    }
+
+    private generateId() {
+        let text = "";
+        let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < 5; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return text;
+    }
+
+    private generateNames() {
+        return this.names[Math.floor(Math.random()*Math.floor(5))];
     }
 }
