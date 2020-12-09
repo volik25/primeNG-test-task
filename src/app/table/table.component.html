@@ -1,1 +1,21 @@
-<p>table works!</p>
+<p-table [columns]="selectedColumns" [value]="payments">
+    <ng-template pTemplate="caption">
+        <p-multiSelect [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header"
+            selectedItemsLabel="Все поля отображены" [style]="{minWidth: '200px'}" placeholder="Выберите поля">
+        </p-multiSelect>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-payment let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+                {{payment[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

@@ -1,13 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { TableComponent } from './table/table.component';
-import {MenubarModule} from 'primeng/menubar';
-import {ButtonModule} from 'primeng/button';
-import {InputTextModule} from 'primeng/inputtext';
+import { MenubarModule } from 'primeng/menubar';
+import { InputTextModule } from 'primeng/inputtext';
 import { SharedModule } from 'primeng/api';
+import { TableModule } from 'primeng/table';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { PaymentService } from './services/payment.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +22,15 @@ import { SharedModule } from 'primeng/api';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MenubarModule,
-    ButtonModule,
     InputTextModule,
-    SharedModule
+    SharedModule,
+    TableModule,
+    MultiSelectModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [PaymentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
