@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Payment } from '../models/payment.model';
+import { IPayment } from '../models/payment.model';
 import { PaymentService } from '../services/payment.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class TableComponent implements OnInit {
     this._selectedColumns = this.cols.filter(col => val.includes(col));
   }
 
-  public payments: Payment[] = [];
+  public payments: IPayment[] = [];
 
   public cols: any[];
   public _selectedColumns: any[];

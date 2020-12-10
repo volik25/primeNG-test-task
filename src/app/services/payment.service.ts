@@ -1,12 +1,12 @@
 import { Observable, of } from 'rxjs';
-import { Payment, PaymentsNames } from '../models/payment.model';
+import { IPayment, PaymentsNames } from '../models/payment.model';
 
 export class PaymentService {
     
     private names: string[] = PaymentsNames;
-    private payments: Payment[] = [];
+    private payments: IPayment[] = [];
 
-    public getPayments(): Observable<Payment[]> {
+    public getPayments(): Observable<IPayment[]> {
         return of(this.generatePayments());
     }
 

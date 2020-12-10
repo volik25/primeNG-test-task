@@ -3,11 +3,6 @@ export interface IThemes {
     link: string;
 }
 
-export const BaseHref: string[] = [
-    'assets/themes/',
-    '/theme.css'
-]
-
 export const Themes: IThemes[] = [
     {
         name: 'Light Bootstrap',
