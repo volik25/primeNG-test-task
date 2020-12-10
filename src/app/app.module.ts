@@ -10,6 +10,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { SharedModule } from 'primeng/api';
 import { TableModule } from 'primeng/table';
 import { MultiSelectModule } from 'primeng/multiselect';
+import {DropdownModule} from 'primeng/dropdown';
 import { PaymentService } from './services/payment.service';
 import { FormsModule } from '@angular/forms';
 
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     SharedModule,
     TableModule,
     MultiSelectModule,
+    DropdownModule,
     FormsModule
   ],
   providers: [PaymentService],

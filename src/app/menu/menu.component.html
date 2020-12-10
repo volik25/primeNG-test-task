@@ -3,6 +3,6 @@
         <img src="./../../assets/primeng.svg" height="40" class="p-mr-2">
     </ng-template>
     <ng-template pTemplate="end">
-        <input type="text" pInputText placeholder="Search">
+        <p-dropdown [options]="themes" [(ngModel)]="selectedTheme" optionLabel="name" (ngModelChange)="changeTheme()"></p-dropdown>
     </ng-template>
 </p-menubar>
