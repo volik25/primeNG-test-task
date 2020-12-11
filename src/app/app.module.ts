@@ -13,13 +13,15 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import {DropdownModule} from 'primeng/dropdown';
 import { PaymentService } from './services/payment.service';
 import { FormsModule } from '@angular/forms';
+import { ThousandSeparatorPipe } from './services/decimal.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MenuComponent,
-    TableComponent
+    TableComponent,
+    ThousandSeparatorPipe
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,7 @@ import { FormsModule } from '@angular/forms';
     DropdownModule,
     FormsModule
   ],
-  providers: [PaymentService],
+  providers: [PaymentService, ThousandSeparatorPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

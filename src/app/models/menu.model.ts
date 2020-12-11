@@ -1,130 +1,61 @@
-import {MenuItem} from 'primeng/api';
+import {MenuItem, PrimeIcons as pi} from 'primeng/api';
 
 export const menuItems: MenuItem[] = [
     {
-        label: 'File',
-        icon: 'pi pi-fw pi-file',
+        label: 'Главная',
+        icon: pi.HOME,
+        
+    },
+    {
+        label: 'Пользователи',
+        icon: pi.USERS,
         items: [
             {
-                label: 'New',
-                icon: 'pi pi-fw pi-plus',
-                items: [
-                    {
-                        label: 'Bookmark',
-                        icon: 'pi pi-fw pi-bookmark'
-                    },
-                    {
-                        label: 'Video',
-                        icon: 'pi pi-fw pi-video'
-                    },
-
-                ]
-            },
-            {
-                label: 'Delete',
-                icon: 'pi pi-fw pi-trash'
+                label: 'Личный кабинет',
+                icon: pi.USER
             },
             {
                 separator: true
             },
             {
-                label: 'Export',
-                icon: 'pi pi-fw pi-external-link'
+                label: 'Все пользователи',
+                icon: pi.USERS
+            },
+            {
+                label: 'Новый пользователь',
+                icon: pi.USER_PLUS
+            },
+            {
+                label: 'Редактировать пользователя',
+                icon: pi.USER_EDIT
             }
         ]
     },
     {
-        label: 'Edit',
-        icon: 'pi pi-fw pi-pencil',
+        label: 'Транзакции',
+        icon: pi.MONEY_BILL,
         items: [
             {
-                label: 'Left',
-                icon: 'pi pi-fw pi-align-left'
-            },
-            {
-                label: 'Right',
-                icon: 'pi pi-fw pi-align-right'
-            },
-            {
-                label: 'Center',
-                icon: 'pi pi-fw pi-align-center'
-            },
-            {
-                label: 'Justify',
-                icon: 'pi pi-fw pi-align-justify'
-            },
-
-        ]
-    },
-    {
-        label: 'Users',
-        icon: 'pi pi-fw pi-user',
-        items: [
-            {
-                label: 'New',
-                icon: 'pi pi-fw pi-user-plus',
-
-            },
-            {
-                label: 'Delete',
-                icon: 'pi pi-fw pi-user-minus',
-
-            },
-            {
-                label: 'Search',
-                icon: 'pi pi-fw pi-users',
+                label: 'Все транзакции',
+                icon: pi.BRIEFCASE,
                 items: [
                     {
-                        label: 'Filter',
-                        icon: 'pi pi-fw pi-filter',
-                        items: [
-                            {
-                                label: 'Print',
-                                icon: 'pi pi-fw pi-print'
-                            }
-                        ]
+                        label: 'Таблицей',
+                        icon: pi.TABLE
                     },
                     {
-                        icon: 'pi pi-fw pi-bars',
-                        label: 'List'
+                        label: 'Списком',
+                        icon: pi.LIST
                     }
                 ]
-            }
-        ]
-    },
-    {
-        label: 'Events',
-        icon: 'pi pi-fw pi-calendar',
-        items: [
-            {
-                label: 'Edit',
-                icon: 'pi pi-fw pi-pencil',
-                items: [
-                    {
-                        label: 'Save',
-                        icon: 'pi pi-fw pi-calendar-plus'
-                    },
-                    {
-                        label: 'Delete',
-                        icon: 'pi pi-fw pi-calendar-minus'
-                    },
-
-                ]
             },
             {
-                label: 'Archieve',
-                icon: 'pi pi-fw pi-calendar-times',
-                items: [
-                    {
-                        label: 'Remove',
-                        icon: 'pi pi-fw pi-calendar-minus'
-                    }
-                ]
+                separator: true
+            },
+            {
+                label: 'Ошибки транзакций',
+                icon: pi.BAN
             }
         ]
-    },
-    {
-        label: 'Quit',
-        icon: 'pi pi-fw pi-power-off'
     }
 ];

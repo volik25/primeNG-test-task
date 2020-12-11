@@ -1,8 +1,11 @@
 <p-table [columns]="selectedColumns" [value]="payments">
     <ng-template pTemplate="caption">
-        <p-multiSelect [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header"
-            selectedItemsLabel="Все поля отображены" [style]="{minWidth: '200px'}" placeholder="Выберите поля">
-        </p-multiSelect>
+        <div class="p-d-flex p-flex-column">
+            <label class="p-mb-2">Отображаемые поля</label>
+            <p-multiSelect [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header"
+                selectedItemsLabel="Все поля отображены" [style]="{minWidth: '200px'}" placeholder="Выберите поля">
+            </p-multiSelect>
+        </div>
     </ng-template>
     <ng-template pTemplate="header" let-columns>
         <tr>
@@ -16,7 +19,7 @@
     <ng-template pTemplate="body" let-payment let-columns="columns">
         <tr>
             <td *ngFor="let col of columns">
-                {{payment[col.field]}}
+                {{payment[col.field] | separatorPipe}}
             </td>
         </tr>
     </ng-template>

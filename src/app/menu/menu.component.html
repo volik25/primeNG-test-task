@@ -3,6 +3,9 @@
         <img src="./../../assets/primeng.svg" height="40" class="p-mr-2">
     </ng-template>
     <ng-template pTemplate="end">
-        <p-dropdown [options]="themes" [(ngModel)]="selectedTheme" optionLabel="name" (ngModelChange)="changeTheme()"></p-dropdown>
+        <div class="p-d-flex p-flex-column p-flex-sm-row p-ai-end p-ai-sm-center">
+            <label class="p-mb-2 p-mb-sm-0 p-mr-sm-2 p-menuitem-text">Тема:</label>
+            <p-dropdown [options]="themes" [(ngModel)]="selectedTheme" optionLabel="name" (ngModelChange)="changeTheme()"></p-dropdown>
+        </div>
     </ng-template>
 </p-menubar>
